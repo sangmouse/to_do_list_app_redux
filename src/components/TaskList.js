@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import TaskItem from './TaskItem';
-// Không lấy dữ liệu từ APP nữa mà lên store để lấy, import connect từ react-redux để lấy data từ store
+// Không lấy state từ App nữa mà lên store để lấy, import connect từ react-redux để lấy state từ store
 
 import {connect} from 'react-redux'
 
@@ -27,6 +27,7 @@ class TaskList extends Component {
         })
     }
     render() {
+        
         var tasks=this.props.tasks
         var filterName=this.state.filterName
         var filterStatus=this.state.filterStatus
@@ -87,7 +88,14 @@ class TaskList extends Component {
                 </div>
             </div>
         );
+    } 
+}
+// chuyển tất cả State từ store (task.js) thành props trong component
+const mapStateToProps = (state) =>{
+    return {
+        tasks: state.tasks
     }
 }
 
-export default TaskList 
+
+export default connect(mapStateToProps, null)(TaskList) 
