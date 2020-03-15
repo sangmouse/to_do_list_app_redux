@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
 import TaskItem from './TaskItem';
+// Không lấy dữ liệu từ APP nữa mà lên store để lấy, import connect từ react-redux để lấy data từ store
+
+import {connect} from 'react-redux'
 
 class TaskList extends Component {
 

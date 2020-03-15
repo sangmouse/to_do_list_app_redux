@@ -225,7 +225,7 @@ class App extends Component {
                       sortValue={sortValue}
                       ></Control>
 
-                      <TaskList tasks={ tasks } 
+                      <TaskList 
                       onUpdateStatus={this.onUpdateStatus}
                       onDeleteItem={this.onDeleteItem}
                       onReceiveEvent={this.onReceiveEvent}
